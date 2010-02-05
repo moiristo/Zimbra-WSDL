@@ -1,0 +1,18 @@
+= Zimbra WSDL
+
+The purpose of this repository is to keep an up to date SOAP WSDL of Zimbra Collaboration Suite 6, as this seems to be too much work for the developers of the service. It can be used to generate a SOAP service using Soap4R.
+
+= Usage
+
+Soap4R offers two methods to create a SOAP driver: a) by generating a driver from a WSDL on the fly; and b) by code generation. For this WSDL, code generation is the best way to go, as the calls that can be created are easier to build using the classes that Soap4R generates. 
+
+Steps to take:
+
+1. Install Soap4R: gem install soap4r (available on gemcutter)
+2. Generate the SOAP driver
+   - wsdl2ruby.rb --wsdl zimbra.wsdl --type client
+3. Check out 'zimbra.rb' for some examples of using the driver. It creates a new Zimbra account and gives the new account some rights. Most importantly, it shows how to create a new context (authToken) and add it to the SOAP headers.
+
+= Last words
+
+I encourage anyone using Zimbra to keep this WSDL up to date by sending patches. As I don't work with Zimbra on a regular basis, I will probably not be able to do this myself. 
